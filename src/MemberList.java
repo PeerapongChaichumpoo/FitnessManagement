@@ -21,7 +21,7 @@ public class MemberList extends javax.swing.JFrame {
      */
     public MemberList() {
         initComponents();
-        String sql = "SELECT Name,Surname,Id,Age,Gender FROM Users";
+        String sql = "SELECT Name,Surname,Id,Age,Gender,Title,Phone FROM users";
         setTable(sql);
         
     }
@@ -31,21 +31,22 @@ public class MemberList extends javax.swing.JFrame {
     }
     
     public void setTable(String sql){
-        String[] colname = {"Id","Name","Suname","Age","Gender"};
+        String[] colname = {"Id","Name","Surname","Age","Gender","Title","Phone no."};
         DefaultTableModel model = new DefaultTableModel(colname,0);
         try{
             DBConnect db = new DBConnect();
             ResultSet rs = db.getConnect(sql);
             
-            int i=0;
+        
             while(rs.next()){
-                i++;
                 String Id = rs.getString("Id");
                 String name = rs.getString("Name");
                 String surname = rs.getString("Surname");
                 String Age = rs.getString("Age");
                 String Gender = rs.getString("Gender");
-                String[] row = {Id,name,surname,Age,Gender};
+                String Title = rs.getString("Title");
+                String Phone = rs.getString("Phone");
+                String[] row = {Id,name,surname,Gender,Age,Title,Phone};
                
                 model.addRow(row);
                 
@@ -86,11 +87,11 @@ public class MemberList extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id", "Name", "Surname", "Age", "Gender", "Job"
+                "Id", "Name", "Surname", "Age", "Gender", "Title", "Phone no."
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -99,7 +100,7 @@ public class MemberList extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel1.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Lucida Console", 1, 36)); // NOI18N
         jLabel1.setText("Member List");
 
         jButton1.setText("Back");
@@ -113,10 +114,6 @@ public class MemberList extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(323, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(279, 279, 279))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,14 +121,18 @@ public class MemberList extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(166, 166, 166))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)

@@ -1,7 +1,7 @@
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
-import javax.swing.JOptionPane;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -12,12 +12,12 @@ import javax.swing.JOptionPane;
  *
  * @author Lenovo
  */
-public class MenuPanel extends javax.swing.JFrame {
+public class SportsPanel extends javax.swing.JFrame {
 
     /**
      * Creates new form MenuPanel
      */
-    public MenuPanel() {
+    public SportsPanel() {
         initComponents();
     }
     public void close(){
@@ -35,59 +35,59 @@ public class MenuPanel extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        tennisB = new javax.swing.JButton();
+        badmintonB = new javax.swing.JButton();
+        basketB = new javax.swing.JButton();
+        footB = new javax.swing.JButton();
+        tableTB = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jButton6 = new javax.swing.JButton();
+        gymB = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("AU FITNESS");
-        setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
 
         jPanel1.setBackground(new java.awt.Color(194, 202, 215));
 
-        jButton1.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
-        jButton1.setText("New Member");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        tennisB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
+        tennisB.setText("Tennis");
+        tennisB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                tennisBActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
-        jButton2.setText("Member List");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        badmintonB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
+        badmintonB.setText("Badminton");
+        badmintonB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                badmintonBActionPerformed(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
-        jButton3.setText("Edit Member");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        basketB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
+        basketB.setText("Basketball");
+        basketB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                basketBActionPerformed(evt);
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
-        jButton4.setText("Schedule");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        footB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
+        footB.setText("Football");
+        footB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                footBActionPerformed(evt);
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
-        jButton5.setText("Booking");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        tableTB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
+        tableTB.setText("Table Tennis");
+        tableTB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                tableTBActionPerformed(evt);
             }
         });
 
@@ -107,7 +107,7 @@ public class MenuPanel extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(252, 60, 68));
 
         jButton6.setFont(new java.awt.Font("Lucida Console", 1, 12)); // NOI18N
-        jButton6.setText("Log out");
+        jButton6.setText("Back");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -131,26 +131,38 @@ public class MenuPanel extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
+        gymB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
+        gymB.setText("Gym");
+        gymB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gymBActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(187, 187, 187)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(103, 103, 103)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(basketB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tennisB, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(gymB, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(badmintonB, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(89, 89, 89)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(footB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tableTB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(39, 39, 39))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,13 +170,14 @@ public class MenuPanel extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tennisB, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(badmintonB, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tableTB, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(basketB, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(footB, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(gymB, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -183,49 +196,61 @@ public class MenuPanel extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-            close();
-            NewMember nm = new NewMember();
-            nm.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void tennisBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tennisBActionPerformed
         // TODO add your handling code here:
         close();
-        MemberList ml = new MemberList();
-        ml.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+        TennisBook tb = new TennisBook();
+        tb.setVisible(true);
+            
+    }//GEN-LAST:event_tennisBActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void badmintonBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_badmintonBActionPerformed
         // TODO add your handling code here:
         close();
-        EditMember em = new EditMember();
-        em.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+        BadmintonBook bb = new BadmintonBook();
+        bb.setVisible(true);
+       
+    }//GEN-LAST:event_badmintonBActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void basketBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_basketBActionPerformed
         // TODO add your handling code here:
         close();
-        SportsPanel sp = new SportsPanel();
-        sp.setVisible(true);
-                
+        BasketballBook bkb = new BasketballBook();
+        bkb.setVisible(true);
+    }//GEN-LAST:event_basketBActionPerformed
+
+    private void footBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_footBActionPerformed
+        // TODO add your handling code here:
+        close();
+        FootballBook fb = new FootballBook();
+        fb.setVisible(true);
+    }//GEN-LAST:event_footBActionPerformed
+
+    private void tableTBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableTBActionPerformed
+        // TODO add your handling code here:
+        close();
+        TableTennisBook tbb = new TableTennisBook();
+        tbb.setVisible(true);
+        
                
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_tableTBActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        int a = JOptionPane.showConfirmDialog(null,"Do you really want to Logout?", "Select",JOptionPane.YES_NO_OPTION);
-        if(a == 0){
+      
             close();
-            WelcomeFrame wf = new WelcomeFrame();
-            wf.setVisible(true);
-        }
+            MenuPanel mp = new MenuPanel();
+            mp.setVisible(true);
+        
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void gymBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gymBActionPerformed
+        // TODO add your handling code here:
+        close();
+        GymBook gb = new GymBook();
+        gb.setVisible(true);
+                
+    }//GEN-LAST:event_gymBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,20 +282,21 @@ public class MenuPanel extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuPanel().setVisible(true);
+                new SportsPanel().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton badmintonB;
+    private javax.swing.JButton basketB;
+    private javax.swing.JButton footB;
+    private javax.swing.JButton gymB;
     private javax.swing.JButton jButton6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JButton tableTB;
+    private javax.swing.JButton tennisB;
     // End of variables declaration//GEN-END:variables
 }

@@ -102,6 +102,7 @@ public class GymBook extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("AU FITNESS");
         setMinimumSize(new java.awt.Dimension(1024, 768));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(252, 60, 68));
@@ -233,6 +234,8 @@ public class GymBook extends javax.swing.JFrame {
         }catch(Exception ex){
             ex.printStackTrace();
         }
+        String sql = "SELECT Id,Name,Surname,Phone,time_in,time_out,record FROM gymbook";
+        setTable(sql);
         
     }//GEN-LAST:event_bt2ActionPerformed
 
@@ -276,12 +279,15 @@ public class GymBook extends javax.swing.JFrame {
             String sql = String.format("INSERT INTO gymbook(Id,Name,Surname,Phone,time_in,record) VALUES('%s','%s','%s','%s','%s','%d') ",id,name,surname,phone,time_in,record);
             db.getUpdate(sql);
             
+            
             db.disconnect();
             
             JOptionPane.showMessageDialog(null,"Time in!");
         }catch(Exception ex){
             
         }
+        String sql = "SELECT Id,Name,Surname,Phone,time_in,time_out,record FROM gymbook";
+        setTable(sql);
         
         
         

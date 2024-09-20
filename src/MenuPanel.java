@@ -48,6 +48,7 @@ public class MenuPanel extends javax.swing.JFrame {
         setTitle("AU FITNESS");
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(194, 202, 215));
 
@@ -206,6 +207,9 @@ public class MenuPanel extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        close();
+        ScheduleFrame sf = new ScheduleFrame();
+        sf.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

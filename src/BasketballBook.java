@@ -1,7 +1,16 @@
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -19,11 +28,51 @@ public class BasketballBook extends javax.swing.JFrame {
      */
     public BasketballBook() {
         initComponents();
+        String sql = String.format("SELECT id,Name,Phone,Date,Time FROM schedule WHERE sport='%s' AND court = '%s'","Basketball","1");
+        setTable(sql,jTable1);
+        String sql2 = String.format("SELECT id,Name,Phone,Date,Time FROM schedule WHERE sport='%s' AND court = '%s'","Basketball","2");
+        setTable(sql2,court2table);
+        String sql3 = String.format("SELECT id,Name,Phone,Date,Time FROM schedule WHERE sport='%s' AND court = '%s'","Basketball","3");
+        setTable(sql3,court3table);
+        String sql4 = String.format("SELECT id,Name,Phone,Date,Time FROM schedule WHERE sport='%s' AND court = '%s'","Basketball","4");
+        setTable(sql4,court4table);
     }
     public void close(){
         WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
     }
+    public void setTable(String sql,JTable table){
+        String[] colname = {"Id","Name","Phone no.","Date","Time"};
+        DefaultTableModel model = new DefaultTableModel(colname,0);
+        
+        try{
+            DBConnect db = new DBConnect();
+            ResultSet rs = db.getConnect(sql);
+            
+        
+            while(rs.next()){
+                String Id = rs.getString("Id");
+                String name = rs.getString("Name");
+                String Phone = rs.getString("Phone");
+                String date = rs.getString("Date");
+                String time = rs.getString("Time");
+                
+                String[] row = {Id,name,Phone,date,time};
+               
+                model.addRow(row);
+                
+            }
+            
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        table.setModel(model);
+    }
+   
+    
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,16 +92,59 @@ public class BasketballBook extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane5 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
+        Court4Pane = new javax.swing.JPanel();
+        court4date = new com.github.lgooddatepicker.components.DatePicker();
+        addBt3 = new javax.swing.JButton();
+        court4time = new javax.swing.JComboBox<>();
+        jLabel15 = new javax.swing.JLabel();
+        court4id = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        court4table = new javax.swing.JTable();
+        jLabel18 = new javax.swing.JLabel();
+        Court2Pane = new javax.swing.JPanel();
+        court2date = new com.github.lgooddatepicker.components.DatePicker();
+        addBt4 = new javax.swing.JButton();
+        court2time = new javax.swing.JComboBox<>();
+        jLabel19 = new javax.swing.JLabel();
+        court2id = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        court2table = new javax.swing.JTable();
+        jLabel22 = new javax.swing.JLabel();
+        Court1Pane = new javax.swing.JPanel();
+        datePicker1 = new com.github.lgooddatepicker.components.DatePicker();
+        addBt = new javax.swing.JButton();
+        timebox = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        idbox = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel10 = new javax.swing.JLabel();
+        Court3Pane = new javax.swing.JPanel();
+        court3date = new com.github.lgooddatepicker.components.DatePicker();
+        addBt2 = new javax.swing.JButton();
+        court3time = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        court3id = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        court3table = new javax.swing.JTable();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("AU FITNESS");
         setMinimumSize(new java.awt.Dimension(1024, 768));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(252, 60, 68));
@@ -66,14 +158,14 @@ public class BasketballBook extends javax.swing.JFrame {
             }
         });
 
-        bt1.setText("Court1");
+        bt1.setText("Court 4");
         bt1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt1ActionPerformed(evt);
             }
         });
 
-        bt3.setText("Court 4");
+        bt3.setText("Court 1");
         bt3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt3ActionPerformed(evt);
@@ -111,15 +203,15 @@ public class BasketballBook extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(170, 170, 170)
-                .addComponent(bt1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
+                .addGap(173, 173, 173)
+                .addComponent(bt3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
                 .addComponent(bt2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
                 .addComponent(bt4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addComponent(bt3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 244, Short.MAX_VALUE)
+                .addGap(48, 48, 48)
+                .addComponent(bt1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 250, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
@@ -128,8 +220,8 @@ public class BasketballBook extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(249, 76, 87));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Console", 1, 48)); // NOI18N
         jLabel1.setText("Basketball");
+        jLabel1.setFont(new java.awt.Font("Lucida Console", 1, 48)); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -145,73 +237,422 @@ public class BasketballBook extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addComponent(jLabel1)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 830, 160));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 830, 170));
 
-        jLabel2.setText("Tab1");
+        court4date.addVetoableChangeListener(new java.beans.VetoableChangeListener() {
+            public void vetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {
+                court4dateVetoableChange(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(325, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(252, 252, 252))
+        addBt3.setText("Add");
+        addBt3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBt3ActionPerformed(evt);
+            }
+        });
+
+        court4time.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "15:30-16:00", "16:00-16:30", "16:30-17:00", "17:00:17:30", "17:30:18:00", "18:00-18:30", "18:30-19:00", "19:00-19:30", "19:30-20:00" }));
+
+        jLabel15.setText("Pick the date");
+
+        jLabel16.setText("Id");
+
+        jLabel17.setText("Time");
+
+        jButton5.setText("Delete");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        court4table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Id", "Name", "Phone no.", "Date", "Time"
+            }
+        ));
+        jScrollPane4.setViewportView(court4table);
+
+        jLabel18.setText("Court 4 ");
+        jLabel18.setFont(new java.awt.Font("Lucida Console", 1, 36)); // NOI18N
+
+        javax.swing.GroupLayout Court4PaneLayout = new javax.swing.GroupLayout(Court4Pane);
+        Court4Pane.setLayout(Court4PaneLayout);
+        Court4PaneLayout.setHorizontalGroup(
+            Court4PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Court4PaneLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(Court4PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Court4PaneLayout.createSequentialGroup()
+                        .addGroup(Court4PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(Court4PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(court4date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Court4PaneLayout.createSequentialGroup()
+                                .addComponent(addBt3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(court4time, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(89, 89, 89))
+                    .addGroup(Court4PaneLayout.createSequentialGroup()
+                        .addGroup(Court4PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(court4id, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(238, 238, 238))))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(195, 195, 195)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(312, Short.MAX_VALUE))
+        Court4PaneLayout.setVerticalGroup(
+            Court4PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Court4PaneLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(Court4PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Court4PaneLayout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addGap(18, 18, 18)
+                        .addComponent(court4id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addGroup(Court4PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Court4PaneLayout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addGap(18, 18, 18)
+                        .addComponent(court4date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel17)
+                        .addGap(18, 18, 18)
+                        .addComponent(court4time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)
+                        .addGroup(Court4PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addBt3)
+                            .addComponent(jButton5)))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(156, Short.MAX_VALUE))
         );
 
-        jTabbedPane5.addTab("tab1", jPanel2);
+        jTabbedPane5.addTab("tab2", Court4Pane);
 
-        jLabel3.setText("Tab2");
+        court2date.addVetoableChangeListener(new java.beans.VetoableChangeListener() {
+            public void vetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {
+                court2dateVetoableChange(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(393, 393, 393)
-                .addComponent(jLabel3)
-                .addContainerGap(412, Short.MAX_VALUE))
+        addBt4.setText("Add");
+        addBt4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBt4ActionPerformed(evt);
+            }
+        });
+
+        court2time.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "15:30-16:00", "16:00-16:30", "16:30-17:00", "17:00:17:30", "17:30:18:00", "18:00-18:30", "18:30-19:00", "19:00-19:30", "19:30-20:00" }));
+
+        jLabel19.setText("Pick the date");
+
+        jLabel20.setText("Id");
+
+        jLabel21.setText("Time");
+
+        jButton6.setText("Delete");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        court2table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Id", "Name", "Phone no.", "Date", "Time"
+            }
+        ));
+        jScrollPane5.setViewportView(court2table);
+
+        jLabel22.setText("Court 2 ");
+        jLabel22.setFont(new java.awt.Font("Lucida Console", 1, 36)); // NOI18N
+
+        javax.swing.GroupLayout Court2PaneLayout = new javax.swing.GroupLayout(Court2Pane);
+        Court2Pane.setLayout(Court2PaneLayout);
+        Court2PaneLayout.setHorizontalGroup(
+            Court2PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Court2PaneLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(Court2PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Court2PaneLayout.createSequentialGroup()
+                        .addGroup(Court2PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(Court2PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(court2date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Court2PaneLayout.createSequentialGroup()
+                                .addComponent(addBt4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(court2time, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(89, 89, 89))
+                    .addGroup(Court2PaneLayout.createSequentialGroup()
+                        .addGroup(Court2PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(court2id, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(238, 238, 238))))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(163, 163, 163)
-                .addComponent(jLabel3)
-                .addContainerGap(426, Short.MAX_VALUE))
+        Court2PaneLayout.setVerticalGroup(
+            Court2PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Court2PaneLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(Court2PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Court2PaneLayout.createSequentialGroup()
+                        .addComponent(jLabel20)
+                        .addGap(18, 18, 18)
+                        .addComponent(court2id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addGroup(Court2PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Court2PaneLayout.createSequentialGroup()
+                        .addComponent(jLabel19)
+                        .addGap(18, 18, 18)
+                        .addComponent(court2date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel21)
+                        .addGap(18, 18, 18)
+                        .addComponent(court2time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)
+                        .addGroup(Court2PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addBt4)
+                            .addComponent(jButton6)))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(156, Short.MAX_VALUE))
         );
 
-        jTabbedPane5.addTab("tab2", jPanel3);
+        jTabbedPane5.addTab("tab3", Court2Pane);
 
-        jLabel4.setText("Tab3");
+        datePicker1.addVetoableChangeListener(new java.beans.VetoableChangeListener() {
+            public void vetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {
+                datePicker1VetoableChange(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(301, 301, 301)
-                .addComponent(jLabel4)
-                .addContainerGap(504, Short.MAX_VALUE))
+        addBt.setText("Add");
+        addBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtActionPerformed(evt);
+            }
+        });
+
+        timebox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "15:30-16:00", "16:00-16:30", "16:30-17:00", "17:00:17:30", "17:30:18:00", "18:00-18:30", "18:30-19:00", "19:00-19:30", "19:30-20:00" }));
+
+        jLabel2.setText("Pick the date");
+
+        jLabel5.setText("Id");
+
+        jLabel6.setText("Time");
+
+        jButton2.setText("Delete");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Id", "Name", "Phone no.", "Date", "Time"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jLabel10.setText("Court 1 ");
+        jLabel10.setFont(new java.awt.Font("Lucida Console", 1, 36)); // NOI18N
+
+        javax.swing.GroupLayout Court1PaneLayout = new javax.swing.GroupLayout(Court1Pane);
+        Court1Pane.setLayout(Court1PaneLayout);
+        Court1PaneLayout.setHorizontalGroup(
+            Court1PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Court1PaneLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(Court1PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Court1PaneLayout.createSequentialGroup()
+                        .addGroup(Court1PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(Court1PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(datePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Court1PaneLayout.createSequentialGroup()
+                                .addComponent(addBt)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(timebox, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(89, 89, 89))
+                    .addGroup(Court1PaneLayout.createSequentialGroup()
+                        .addGroup(Court1PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(idbox, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(238, 238, 238))))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(152, 152, 152)
-                .addComponent(jLabel4)
-                .addContainerGap(437, Short.MAX_VALUE))
+        Court1PaneLayout.setVerticalGroup(
+            Court1PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Court1PaneLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(Court1PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Court1PaneLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(idbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addGroup(Court1PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Court1PaneLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(datePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(timebox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)
+                        .addGroup(Court1PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addBt)
+                            .addComponent(jButton2)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(156, Short.MAX_VALUE))
         );
 
-        jTabbedPane5.addTab("tab3", jPanel5);
+        jTabbedPane5.addTab("tab1", Court1Pane);
+
+        court3date.addVetoableChangeListener(new java.beans.VetoableChangeListener() {
+            public void vetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {
+                court3dateVetoableChange(evt);
+            }
+        });
+
+        addBt2.setText("Add");
+        addBt2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBt2ActionPerformed(evt);
+            }
+        });
+
+        court3time.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "15:30-16:00", "16:00-16:30", "16:30-17:00", "17:00:17:30", "17:30:18:00", "18:00-18:30", "18:30-19:00", "19:00-19:30", "19:30-20:00" }));
+
+        jLabel11.setText("Pick the date");
+
+        jLabel12.setText("Id");
+
+        jLabel13.setText("Time");
+
+        jButton4.setText("Delete");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        court3table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Id", "Name", "Phone no.", "Date", "Time"
+            }
+        ));
+        jScrollPane3.setViewportView(court3table);
+
+        jLabel14.setText("Court 3 ");
+        jLabel14.setFont(new java.awt.Font("Lucida Console", 1, 36)); // NOI18N
+
+        javax.swing.GroupLayout Court3PaneLayout = new javax.swing.GroupLayout(Court3Pane);
+        Court3Pane.setLayout(Court3PaneLayout);
+        Court3PaneLayout.setHorizontalGroup(
+            Court3PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Court3PaneLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(Court3PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Court3PaneLayout.createSequentialGroup()
+                        .addGroup(Court3PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(Court3PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(court3date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(Court3PaneLayout.createSequentialGroup()
+                                .addComponent(addBt2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(court3time, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(89, 89, 89))
+                    .addGroup(Court3PaneLayout.createSequentialGroup()
+                        .addGroup(Court3PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(court3id, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(238, 238, 238))))
+        );
+        Court3PaneLayout.setVerticalGroup(
+            Court3PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Court3PaneLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(Court3PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Court3PaneLayout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addGap(18, 18, 18)
+                        .addComponent(court3id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addGroup(Court3PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Court3PaneLayout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(18, 18, 18)
+                        .addComponent(court3date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel13)
+                        .addGap(18, 18, 18)
+                        .addComponent(court3time, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)
+                        .addGroup(Court3PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addBt2)
+                            .addComponent(jButton4)))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(156, Short.MAX_VALUE))
+        );
+
+        jTabbedPane5.addTab("tab4", Court3Pane);
 
         getContentPane().add(jTabbedPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 830, 640));
 
@@ -244,7 +685,396 @@ public class BasketballBook extends javax.swing.JFrame {
 
     private void bt4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt4ActionPerformed
         // TODO add your handling code here:
+        jTabbedPane5.setSelectedIndex(3);
     }//GEN-LAST:event_bt4ActionPerformed
+
+    private void addBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtActionPerformed
+        // TODO add your handling code here:
+        LocalDate date = datePicker1.getDate();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String formattedDate = date.format(dateTimeFormatter);
+        String time = timebox.getItemAt(timebox.getSelectedIndex());
+        String id = idbox.getText();
+        String name = "";
+        String phone = "";
+        String sport = "Basketball";
+        String court = "1";
+        
+        try{
+
+            DBConnect db = new DBConnect();
+            String sql = String.format("SELECT Name,Phone FROM users WHERE id='%s'",id);
+            ResultSet rs = db.getConnect(sql);
+            
+            if(rs.next()){
+                name = rs.getString("Name");
+                phone = rs.getString("Phone");
+
+            }
+            
+            
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        
+        List<String> times = new ArrayList();
+        
+   
+        try{
+
+            DBConnect db = new DBConnect();
+            String sql = String.format("SELECT Time FROM schedule WHERE date = '%s'",date);
+            ResultSet rs = db.getConnect(sql);
+            
+            while(rs.next()){
+                String t_time = rs.getString("Time");
+                times.add(t_time);
+            }
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        
+        
+        
+            if (times.contains(time)){
+                JOptionPane.showMessageDialog(null,"Time not available!","Error",JOptionPane.WARNING_MESSAGE);
+            }
+            else{
+                try{
+            DBConnect db =new DBConnect();
+            String sql = String.format("INSERT INTO schedule(Id,Name,Phone,sport,court,Date,Time) VALUES('%s','%s','%s','%s','%s','%s','%s') ",id,name,phone,sport,court,date,time);
+            db.getUpdate(sql);
+            
+            
+            db.disconnect();
+            
+            JOptionPane.showMessageDialog(null,"Reserved!");
+                }catch(Exception ex){
+            
+                }
+        
+            }
+        
+        String sql = String.format("SELECT id,Name,Phone,Date,Time FROM schedule WHERE sport='%s' AND court = '%s'","Basketball","1");
+        setTable(sql,jTable1);
+        
+        
+               
+    }//GEN-LAST:event_addBtActionPerformed
+
+    private void datePicker1VetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {//GEN-FIRST:event_datePicker1VetoableChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_datePicker1VetoableChange
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        String id = idbox.getText();
+        
+        int a = JOptionPane.showConfirmDialog(null,"Do you really want to delete this Id '?", "Select",JOptionPane.YES_NO_OPTION);
+            if(a == 0){
+                try{
+                    DBConnect db =new DBConnect();
+                    String sql = String.format("DELETE FROM schedule WHERE id='%s' AND sport = '%s' AND court = '%s' ",id,"Basketball","1");
+                    db.getUpdate(sql);
+                    db.disconnect();
+
+                    JOptionPane.showMessageDialog(null,"Delete Successfully!");
+                }catch(Exception ex){
+                    ex.printStackTrace();
+                }
+            }
+            String sql = String.format("SELECT id,Name,Phone,Date,Time FROM schedule WHERE sport='%s' AND court = '%s'","Basketball","1");
+            setTable(sql,jTable1);
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void court3dateVetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {//GEN-FIRST:event_court3dateVetoableChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_court3dateVetoableChange
+
+    private void addBt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBt2ActionPerformed
+        // TODO add your handling code here:
+        LocalDate date = court3date.getDate();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String formattedDate = date.format(dateTimeFormatter);
+        String time = court3time.getItemAt(court3time.getSelectedIndex());
+        String id = court3id.getText();
+        String name = "";
+        String phone = "";
+        String sport = "Basketball";
+        String court = "3";
+        
+        try{
+
+            DBConnect db = new DBConnect();
+            String sql = String.format("SELECT Name,Phone FROM users WHERE id='%s'",id);
+            ResultSet rs = db.getConnect(sql);
+            
+            if(rs.next()){
+                name = rs.getString("Name");
+                phone = rs.getString("Phone");
+
+            }
+            
+            
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        
+        List<String> times = new ArrayList();
+        
+   
+        try{
+
+            DBConnect db = new DBConnect();
+            String sql = String.format("SELECT Time FROM schedule WHERE date = '%s'",date);
+            ResultSet rs = db.getConnect(sql);
+            
+            while(rs.next()){
+                String t_time = rs.getString("Time");
+                times.add(t_time);
+            }
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        
+        
+        
+            if (times.contains(time)){
+                JOptionPane.showMessageDialog(null,"Time not available!","Error",JOptionPane.WARNING_MESSAGE);
+            }
+            else{
+                try{
+            DBConnect db =new DBConnect();
+            String sql = String.format("INSERT INTO schedule(Id,Name,Phone,sport,court,Date,Time) VALUES('%s','%s','%s','%s','%s','%s','%s') ",id,name,phone,sport,court,date,time);
+            db.getUpdate(sql);
+            
+            
+            db.disconnect();
+            
+            JOptionPane.showMessageDialog(null,"Reserved!");
+                }catch(Exception ex){
+            
+                }
+        
+            }
+        
+        String sql = String.format("SELECT id,Name,Phone,Date,Time FROM schedule WHERE sport='%s' AND court = '%s'","Basketball","3");
+        setTable(sql,court3table);
+    }//GEN-LAST:event_addBt2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        String id = idbox.getText();
+        
+        int a = JOptionPane.showConfirmDialog(null,"Do you really want to delete this Id '?", "Select",JOptionPane.YES_NO_OPTION);
+            if(a == 0){
+                try{
+                    DBConnect db =new DBConnect();
+                    String sql = String.format("DELETE FROM schedule WHERE id='%s' AND sport = '%s' AND court = '%s' ",id,"Basketball","3");
+                    db.getUpdate(sql);
+                    db.disconnect();
+
+                    JOptionPane.showMessageDialog(null,"Delete Successfully!");
+                }catch(Exception ex){
+                    ex.printStackTrace();
+                }
+            }
+            String sql = String.format("SELECT id,Name,Phone,Date,Time FROM schedule WHERE sport='%s' AND court = '%s'","Basketball","3");
+            setTable(sql,court3table);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void court4dateVetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {//GEN-FIRST:event_court4dateVetoableChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_court4dateVetoableChange
+
+    private void addBt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBt3ActionPerformed
+        // TODO add your handling code here:
+        LocalDate date = court4date.getDate();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String formattedDate = date.format(dateTimeFormatter);
+        String time = court4time.getItemAt(court4time.getSelectedIndex());
+        String id = court4id.getText();
+        String name = "";
+        String phone = "";
+        String sport = "Basketball";
+        String court = "4";
+        
+        try{
+
+            DBConnect db = new DBConnect();
+            String sql = String.format("SELECT Name,Phone FROM users WHERE id='%s'",id);
+            ResultSet rs = db.getConnect(sql);
+            
+            if(rs.next()){
+                name = rs.getString("Name");
+                phone = rs.getString("Phone");
+
+            }
+            
+            
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        
+        List<String> times = new ArrayList();
+        
+   
+        try{
+
+            DBConnect db = new DBConnect();
+            String sql = String.format("SELECT Time FROM schedule WHERE date = '%s'",date);
+            ResultSet rs = db.getConnect(sql);
+            
+            while(rs.next()){
+                String t_time = rs.getString("Time");
+                times.add(t_time);
+            }
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        
+        
+        
+            if (times.contains(time)){
+                JOptionPane.showMessageDialog(null,"Time not available!","Error",JOptionPane.WARNING_MESSAGE);
+            }
+            else{
+                try{
+            DBConnect db =new DBConnect();
+            String sql = String.format("INSERT INTO schedule(Id,Name,Phone,sport,court,Date,Time) VALUES('%s','%s','%s','%s','%s','%s','%s') ",id,name,phone,sport,court,date,time);
+            db.getUpdate(sql);
+            
+            
+            db.disconnect();
+            
+            JOptionPane.showMessageDialog(null,"Reserved!");
+                }catch(Exception ex){
+            
+                }
+        
+            }
+        
+        String sql = String.format("SELECT id,Name,Phone,Date,Time FROM schedule WHERE sport='%s' AND court = '%s'","Basketball","4");
+        setTable(sql,court4table);
+    }//GEN-LAST:event_addBt3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        String id = idbox.getText();
+        
+        int a = JOptionPane.showConfirmDialog(null,"Do you really want to delete this Id '?", "Select",JOptionPane.YES_NO_OPTION);
+            if(a == 0){
+                try{
+                    DBConnect db =new DBConnect();
+                    String sql = String.format("DELETE FROM schedule WHERE id='%s' AND sport = '%s' AND court = '%s' ",id,"Basketball","4");
+                    db.getUpdate(sql);
+                    db.disconnect();
+
+                    JOptionPane.showMessageDialog(null,"Delete Successfully!");
+                }catch(Exception ex){
+                    ex.printStackTrace();
+                }
+            }
+            String sql = String.format("SELECT id,Name,Phone,Date,Time FROM schedule WHERE sport='%s' AND court = '%s'","Basketball","4");
+            setTable(sql,court4table);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void court2dateVetoableChange(java.beans.PropertyChangeEvent evt)throws java.beans.PropertyVetoException {//GEN-FIRST:event_court2dateVetoableChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_court2dateVetoableChange
+
+    private void addBt4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBt4ActionPerformed
+        // TODO add your handling code here:
+        LocalDate date = court2date.getDate();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String formattedDate = date.format(dateTimeFormatter);
+        String time = court2time.getItemAt(court2time.getSelectedIndex());
+        String id = court2id.getText();
+        String name = "";
+        String phone = "";
+        String sport = "Basketball";
+        String court = "2";
+        
+        try{
+
+            DBConnect db = new DBConnect();
+            String sql = String.format("SELECT Name,Phone FROM users WHERE id='%s'",id);
+            ResultSet rs = db.getConnect(sql);
+            
+            if(rs.next()){
+                name = rs.getString("Name");
+                phone = rs.getString("Phone");
+
+            }
+            
+            
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        
+        List<String> times = new ArrayList();
+        
+   
+        try{
+
+            DBConnect db = new DBConnect();
+            String sql = String.format("SELECT Time FROM schedule WHERE date = '%s'",date);
+            ResultSet rs = db.getConnect(sql);
+            
+            while(rs.next()){
+                String t_time = rs.getString("Time");
+                times.add(t_time);
+            }
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        
+        
+        
+            if (times.contains(time)){
+                JOptionPane.showMessageDialog(null,"Time not available!","Error",JOptionPane.WARNING_MESSAGE);
+            }
+            else{
+                try{
+            DBConnect db =new DBConnect();
+            String sql = String.format("INSERT INTO schedule(Id,Name,Phone,sport,court,Date,Time) VALUES('%s','%s','%s','%s','%s','%s','%s') ",id,name,phone,sport,court,date,time);
+            db.getUpdate(sql);
+            
+            
+            db.disconnect();
+            
+            JOptionPane.showMessageDialog(null,"Reserved!");
+                }catch(Exception ex){
+            
+                }
+        
+            }
+        
+        String sql = String.format("SELECT id,Name,Phone,Date,Time FROM schedule WHERE sport='%s' AND court = '%s'","Basketball","2");
+        setTable(sql,court2table);
+    }//GEN-LAST:event_addBt4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        String id = idbox.getText();
+        
+        int a = JOptionPane.showConfirmDialog(null,"Do you really want to delete this Id '?", "Select",JOptionPane.YES_NO_OPTION);
+            if(a == 0){
+                try{
+                    DBConnect db =new DBConnect();
+                    String sql = String.format("DELETE FROM schedule WHERE id='%s' AND sport = '%s' AND court = '%s' ",id,"Basketball","2");
+                    db.getUpdate(sql);
+                    db.disconnect();
+
+                    JOptionPane.showMessageDialog(null,"Delete Successfully!");
+                }catch(Exception ex){
+                    ex.printStackTrace();
+                }
+            }
+            String sql = String.format("SELECT id,Name,Phone,Date,Time FROM schedule WHERE sport='%s' AND court = '%s'","Basketball","2");
+            setTable(sql,court2table);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,30 +1105,73 @@ public class BasketballBook extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TennisBook().setVisible(true);
+                new BasketballBook().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Court1Pane;
+    private javax.swing.JPanel Court2Pane;
+    private javax.swing.JPanel Court3Pane;
+    private javax.swing.JPanel Court4Pane;
+    private javax.swing.JButton addBt;
+    private javax.swing.JButton addBt2;
+    private javax.swing.JButton addBt3;
+    private javax.swing.JButton addBt4;
     private javax.swing.JButton bt1;
     private javax.swing.JButton bt2;
     private javax.swing.JButton bt3;
     private javax.swing.JButton bt4;
+    private com.github.lgooddatepicker.components.DatePicker court2date;
+    private javax.swing.JTextField court2id;
+    private javax.swing.JTable court2table;
+    private javax.swing.JComboBox<String> court2time;
+    private com.github.lgooddatepicker.components.DatePicker court3date;
+    private javax.swing.JTextField court3id;
+    private javax.swing.JTable court3table;
+    private javax.swing.JComboBox<String> court3time;
+    private com.github.lgooddatepicker.components.DatePicker court4date;
+    private javax.swing.JTextField court4id;
+    private javax.swing.JTable court4table;
+    private javax.swing.JComboBox<String> court4time;
+    private com.github.lgooddatepicker.components.DatePicker datePicker1;
+    private javax.swing.JTextField idbox;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane5;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JComboBox<String> timebox;
     // End of variables declaration//GEN-END:variables
 }

@@ -46,7 +46,7 @@ public class MemberList extends javax.swing.JFrame {
                 String Gender = rs.getString("Gender");
                 String Title = rs.getString("Title");
                 String Phone = rs.getString("Phone");
-                String[] row = {Id,name,surname,Gender,Age,Title,Phone};
+                String[] row = {Id,name,surname,Age,Gender,Title,Phone};
                
                 model.addRow(row);
                 

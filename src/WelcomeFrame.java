@@ -9,8 +9,10 @@
  */
 
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowEvent;
 import javax.swing.JOptionPane;
+
 public class WelcomeFrame extends javax.swing.JFrame {
 
     /**
@@ -23,6 +25,8 @@ public class WelcomeFrame extends javax.swing.JFrame {
         WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,7 +44,7 @@ public class WelcomeFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         tf1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        signB = new javax.swing.JButton();
         pf = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -91,11 +95,16 @@ public class WelcomeFrame extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Lucida Console", 1, 24)); // NOI18N
         jLabel4.setText("Password");
 
-        jButton1.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
-        jButton1.setText("Sign in");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        signB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
+        signB.setText("Sign in");
+        signB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                signBActionPerformed(evt);
+            }
+        });
+        signB.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                signBKeyPressed(evt);
             }
         });
 
@@ -125,7 +134,7 @@ public class WelcomeFrame extends javax.swing.JFrame {
                         .addContainerGap(25, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(signB, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(126, 126, 126))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -140,7 +149,7 @@ public class WelcomeFrame extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(pf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(signB, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(215, Short.MAX_VALUE))
         );
 
@@ -149,7 +158,7 @@ public class WelcomeFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void signBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signBActionPerformed
         // TODO add your handling code here:
         String userName = tf1.getText();
         String passWord = String.valueOf(pf.getPassword());
@@ -165,11 +174,20 @@ public class WelcomeFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Wrong Username or Password!","Error",JOptionPane.WARNING_MESSAGE);
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_signBActionPerformed
 
     private void pfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pfActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_pfActionPerformed
+
+    private void signBKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_signBKeyPressed
+        // TODO add your handling code here:
+       if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+           signB.requestFocus();
+           signB.doClick();
+       }
+        
+    }//GEN-LAST:event_signBKeyPressed
 
     /**
      * @param args the command line arguments
@@ -207,7 +225,6 @@ public class WelcomeFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -215,6 +232,7 @@ public class WelcomeFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField pf;
+    private javax.swing.JButton signB;
     private javax.swing.JTextField tf1;
     // End of variables declaration//GEN-END:variables
 }

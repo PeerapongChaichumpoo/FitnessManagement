@@ -53,50 +53,49 @@ public class WelcomeFrame extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(249, 76, 87));
+        jPanel1.setBackground(new java.awt.Color(215, 9, 22));
         jPanel1.setMaximumSize(new java.awt.Dimension(400, 600));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sports.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Lucida Console", 1, 48)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         jLabel2.setText("AU Fitness");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(40, 40, 40))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(46, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(40, 40, 40))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(83, Short.MAX_VALUE)
+                .addContainerGap(85, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
+                .addGap(48, 48, 48)
                 .addComponent(jLabel1)
                 .addGap(132, 132, 132))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
 
-        jPanel2.setBackground(new java.awt.Color(194, 202, 215));
+        jPanel2.setBackground(new java.awt.Color(245, 245, 245));
         jPanel2.setPreferredSize(new java.awt.Dimension(400, 600));
 
-        jLabel3.setFont(new java.awt.Font("Lucida Console", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel3.setText("Username");
 
-        jLabel4.setFont(new java.awt.Font("Lucida Console", 1, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel4.setText("Password");
 
-        signB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
+        tf1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+
+        signB.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         signB.setText("Sign in");
         signB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,8 +106,12 @@ public class WelcomeFrame extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 signBKeyPressed(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                signBKeyTyped(evt);
+            }
         });
 
+        pf.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         pf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pfActionPerformed(evt);
@@ -132,7 +135,7 @@ public class WelcomeFrame extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(pf)))
-                        .addContainerGap(25, Short.MAX_VALUE))
+                        .addContainerGap(26, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(signB, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -151,7 +154,7 @@ public class WelcomeFrame extends javax.swing.JFrame {
                     .addComponent(pf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addComponent(signB, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(215, Short.MAX_VALUE))
+                .addContainerGap(211, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 450, 600));
@@ -189,6 +192,14 @@ public class WelcomeFrame extends javax.swing.JFrame {
        }
         
     }//GEN-LAST:event_signBKeyPressed
+
+    private void signBKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_signBKeyTyped
+        // TODO add your handling code here:
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+           signB.requestFocus();
+           signB.doClick();
+       }
+    }//GEN-LAST:event_signBKeyTyped
 
     /**
      * @param args the command line arguments

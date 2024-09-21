@@ -105,7 +105,7 @@ public class GymBook extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(252, 60, 68));
+        jPanel1.setBackground(new java.awt.Color(252, 48, 29));
         jPanel1.setMaximumSize(new java.awt.Dimension(200, 768));
         jPanel1.setMinimumSize(new java.awt.Dimension(200, 768));
 

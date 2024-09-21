@@ -147,7 +147,7 @@ public class BadmintonBook extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(252, 60, 68));
+        jPanel1.setBackground(new java.awt.Color(252, 48, 29));
         jPanel1.setMaximumSize(new java.awt.Dimension(200, 768));
         jPanel1.setMinimumSize(new java.awt.Dimension(200, 768));
 
@@ -218,7 +218,7 @@ public class BadmintonBook extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 768));
 
-        jPanel4.setBackground(new java.awt.Color(249, 76, 87));
+        jPanel4.setBackground(new java.awt.Color(252, 48, 29));
 
         jLabel1.setText("Badminton");
         jLabel1.setFont(new java.awt.Font("Lucida Console", 1, 48)); // NOI18N
@@ -281,10 +281,11 @@ public class BadmintonBook extends javax.swing.JFrame {
                 "Id", "Name", "Phone no.", "Date", "Time"
             }
         ));
+        court4table.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jScrollPane4.setViewportView(court4table);
 
-        jLabel18.setFont(new java.awt.Font("Lucida Console", 1, 36)); // NOI18N
         jLabel18.setText("Court 4 ");
+        jLabel18.setFont(new java.awt.Font("Lucida Console", 1, 36)); // NOI18N
 
         javax.swing.GroupLayout Court4PaneLayout = new javax.swing.GroupLayout(Court4Pane);
         Court4Pane.setLayout(Court4PaneLayout);
@@ -384,10 +385,11 @@ public class BadmintonBook extends javax.swing.JFrame {
                 "Id", "Name", "Phone no.", "Date", "Time"
             }
         ));
+        court2table.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jScrollPane5.setViewportView(court2table);
 
-        jLabel22.setFont(new java.awt.Font("Lucida Console", 1, 36)); // NOI18N
         jLabel22.setText("Court 2 ");
+        jLabel22.setFont(new java.awt.Font("Lucida Console", 1, 36)); // NOI18N
 
         javax.swing.GroupLayout Court2PaneLayout = new javax.swing.GroupLayout(Court2Pane);
         Court2Pane.setLayout(Court2PaneLayout);
@@ -487,10 +489,11 @@ public class BadmintonBook extends javax.swing.JFrame {
                 "Id", "Name", "Phone no.", "Date", "Time"
             }
         ));
+        jTable1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel10.setFont(new java.awt.Font("Lucida Console", 1, 36)); // NOI18N
         jLabel10.setText("Court 1 ");
+        jLabel10.setFont(new java.awt.Font("Lucida Console", 1, 36)); // NOI18N
 
         javax.swing.GroupLayout Court1PaneLayout = new javax.swing.GroupLayout(Court1Pane);
         Court1Pane.setLayout(Court1PaneLayout);
@@ -590,10 +593,11 @@ public class BadmintonBook extends javax.swing.JFrame {
                 "Id", "Name", "Phone no.", "Date", "Time"
             }
         ));
+        court3table.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jScrollPane3.setViewportView(court3table);
 
-        jLabel14.setFont(new java.awt.Font("Lucida Console", 1, 36)); // NOI18N
         jLabel14.setText("Court 3 ");
+        jLabel14.setFont(new java.awt.Font("Lucida Console", 1, 36)); // NOI18N
 
         javax.swing.GroupLayout Court3PaneLayout = new javax.swing.GroupLayout(Court3Pane);
         Court3Pane.setLayout(Court3PaneLayout);

@@ -1,6 +1,7 @@
 
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
+import javax.swing.ImageIcon;
 
 
 /*
@@ -41,6 +42,7 @@ public class SportsPanel extends javax.swing.JFrame {
         footB = new javax.swing.JButton();
         tableTB = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jButton6 = new javax.swing.JButton();
         gymB = new javax.swing.JButton();
@@ -49,11 +51,22 @@ public class SportsPanel extends javax.swing.JFrame {
         setTitle("AU FITNESS");
         setMinimumSize(new java.awt.Dimension(800, 600));
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(194, 202, 215));
 
         tennisB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
-        tennisB.setText("Tennis");
+        tennisB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tn.png"))); // NOI18N
+        tennisB.setBorder(null);
+        tennisB.setPreferredSize(new java.awt.Dimension(128, 128));
+        tennisB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tennisBMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                tennisBMouseExited(evt);
+            }
+        });
         tennisB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tennisBActionPerformed(evt);
@@ -61,7 +74,17 @@ public class SportsPanel extends javax.swing.JFrame {
         });
 
         badmintonB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
-        badmintonB.setText("Badminton");
+        badmintonB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bmd.png"))); // NOI18N
+        badmintonB.setBorder(null);
+        badmintonB.setPreferredSize(new java.awt.Dimension(128, 128));
+        badmintonB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                badmintonBMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                badmintonBMouseExited(evt);
+            }
+        });
         badmintonB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 badmintonBActionPerformed(evt);
@@ -69,7 +92,17 @@ public class SportsPanel extends javax.swing.JFrame {
         });
 
         basketB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
-        basketB.setText("Basketball");
+        basketB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bkb.png"))); // NOI18N
+        basketB.setBorder(null);
+        basketB.setPreferredSize(new java.awt.Dimension(128, 128));
+        basketB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                basketBMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                basketBMouseExited(evt);
+            }
+        });
         basketB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 basketBActionPerformed(evt);
@@ -77,7 +110,17 @@ public class SportsPanel extends javax.swing.JFrame {
         });
 
         footB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
-        footB.setText("Football");
+        footB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fb.png"))); // NOI18N
+        footB.setBorder(null);
+        footB.setPreferredSize(new java.awt.Dimension(128, 128));
+        footB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                footBMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                footBMouseExited(evt);
+            }
+        });
         footB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 footBActionPerformed(evt);
@@ -85,29 +128,48 @@ public class SportsPanel extends javax.swing.JFrame {
         });
 
         tableTB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
-        tableTB.setText("Table Tennis");
+        tableTB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tbt.png"))); // NOI18N
+        tableTB.setBorder(null);
+        tableTB.setPreferredSize(new java.awt.Dimension(128, 128));
+        tableTB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tableTBMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                tableTBMouseExited(evt);
+            }
+        });
         tableTB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tableTBActionPerformed(evt);
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(252, 60, 68));
+        jPanel2.setBackground(new java.awt.Color(252, 48, 29));
+
+        jLabel1.setText("Booking");
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(266, 266, 266))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 76, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
-        jPanel3.setBackground(new java.awt.Color(252, 60, 68));
+        jPanel3.setBackground(new java.awt.Color(252, 48, 29));
 
-        jButton6.setFont(new java.awt.Font("Lucida Console", 1, 12)); // NOI18N
+        jButton6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton6.setText("Back");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,7 +184,7 @@ public class SportsPanel extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(718, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,7 +195,16 @@ public class SportsPanel extends javax.swing.JFrame {
         );
 
         gymB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
-        gymB.setText("Gym");
+        gymB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gym.png"))); // NOI18N
+        gymB.setBorder(null);
+        gymB.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                gymBMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                gymBMouseExited(evt);
+            }
+        });
         gymB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gymBActionPerformed(evt);
@@ -147,52 +218,49 @@ public class SportsPanel extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(basketB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tennisB, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(gymB, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(badmintonB, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(89, 89, 89)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(footB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tableTB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(39, 39, 39))
+                .addGap(92, 92, 92)
+                .addComponent(tennisB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(badmintonB, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(136, 136, 136)
+                .addComponent(tableTB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(78, 78, 78))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(basketB, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(gymB, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(118, 118, 118)
+                .addComponent(footB, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tennisB, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(badmintonB, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tableTB, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(basketB, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(footB, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(gymB, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                .addGap(44, 44, 44)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(badmintonB, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(86, 86, 86)
+                        .addComponent(gymB, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 22, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(tableTB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(footB, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(tennisB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(basketB, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(67, 67, 67)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -253,6 +321,78 @@ public class SportsPanel extends javax.swing.JFrame {
                 
     }//GEN-LAST:event_gymBActionPerformed
 
+    private void tennisBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tennisBMouseEntered
+        // TODO add your handling code here:
+        ImageIcon icon = new  ImageIcon("src\\images\\tnhv.png");
+        tennisB.setIcon(icon);
+    }//GEN-LAST:event_tennisBMouseEntered
+
+    private void tennisBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tennisBMouseExited
+        // TODO add your handling code here:
+        ImageIcon icon = new  ImageIcon("src\\images\\tn.png");
+        tennisB.setIcon(icon);
+    }//GEN-LAST:event_tennisBMouseExited
+
+    private void badmintonBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_badmintonBMouseEntered
+        // TODO add your handling code here:
+        ImageIcon icon = new  ImageIcon("src\\images\\bmdhv.png");
+        badmintonB.setIcon(icon);
+    }//GEN-LAST:event_badmintonBMouseEntered
+
+    private void badmintonBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_badmintonBMouseExited
+        // TODO add your handling code here:
+        ImageIcon icon = new  ImageIcon("src\\images\\bmd.png");
+        badmintonB.setIcon(icon);
+    }//GEN-LAST:event_badmintonBMouseExited
+
+    private void tableTBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableTBMouseEntered
+        // TODO add your handling code here:
+        ImageIcon icon = new  ImageIcon("src\\images\\tbthv.png");
+        tableTB.setIcon(icon);
+    }//GEN-LAST:event_tableTBMouseEntered
+
+    private void tableTBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableTBMouseExited
+        // TODO add your handling code here:
+        ImageIcon icon = new  ImageIcon("src\\images\\tbt.png");
+        tableTB.setIcon(icon);
+    }//GEN-LAST:event_tableTBMouseExited
+
+    private void basketBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_basketBMouseEntered
+        // TODO add your handling code here:
+        ImageIcon icon = new  ImageIcon("src\\images\\bkbhv.png");
+        basketB.setIcon(icon);
+    }//GEN-LAST:event_basketBMouseEntered
+
+    private void basketBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_basketBMouseExited
+        // TODO add your handling code here:
+        ImageIcon icon = new  ImageIcon("src\\images\\bkb.png");
+        basketB.setIcon(icon);
+    }//GEN-LAST:event_basketBMouseExited
+
+    private void footBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_footBMouseEntered
+        // TODO add your handling code here:
+        ImageIcon icon = new  ImageIcon("src\\images\\fbhv.png");
+        footB.setIcon(icon);
+    }//GEN-LAST:event_footBMouseEntered
+
+    private void footBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_footBMouseExited
+        // TODO add your handling code here:
+        ImageIcon icon = new  ImageIcon("src\\images\\fb.png");
+        footB.setIcon(icon);
+    }//GEN-LAST:event_footBMouseExited
+
+    private void gymBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gymBMouseEntered
+        // TODO add your handling code here:
+        ImageIcon icon = new  ImageIcon("src\\images\\gymhv.png");
+        gymB.setIcon(icon);
+    }//GEN-LAST:event_gymBMouseEntered
+
+    private void gymBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gymBMouseExited
+        // TODO add your handling code here:
+        ImageIcon icon = new  ImageIcon("src\\images\\gym.png");
+        gymB.setIcon(icon);
+    }//GEN-LAST:event_gymBMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -294,6 +434,7 @@ public class SportsPanel extends javax.swing.JFrame {
     private javax.swing.JButton footB;
     private javax.swing.JButton gymB;
     private javax.swing.JButton jButton6;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

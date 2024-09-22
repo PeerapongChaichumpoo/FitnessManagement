@@ -58,7 +58,6 @@ public class SportsPanel extends javax.swing.JFrame {
         tennisB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
         tennisB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tn.png"))); // NOI18N
         tennisB.setBorder(null);
-        tennisB.setPreferredSize(new java.awt.Dimension(128, 128));
         tennisB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 tennisBMouseEntered(evt);
@@ -76,7 +75,6 @@ public class SportsPanel extends javax.swing.JFrame {
         badmintonB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
         badmintonB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bmd.png"))); // NOI18N
         badmintonB.setBorder(null);
-        badmintonB.setPreferredSize(new java.awt.Dimension(128, 128));
         badmintonB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 badmintonBMouseEntered(evt);
@@ -94,7 +92,6 @@ public class SportsPanel extends javax.swing.JFrame {
         basketB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
         basketB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bkb.png"))); // NOI18N
         basketB.setBorder(null);
-        basketB.setPreferredSize(new java.awt.Dimension(128, 128));
         basketB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 basketBMouseEntered(evt);
@@ -112,7 +109,6 @@ public class SportsPanel extends javax.swing.JFrame {
         footB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
         footB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fb.png"))); // NOI18N
         footB.setBorder(null);
-        footB.setPreferredSize(new java.awt.Dimension(128, 128));
         footB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 footBMouseEntered(evt);
@@ -130,7 +126,6 @@ public class SportsPanel extends javax.swing.JFrame {
         tableTB.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
         tableTB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tbt.png"))); // NOI18N
         tableTB.setBorder(null);
-        tableTB.setPreferredSize(new java.awt.Dimension(128, 128));
         tableTB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 tableTBMouseEntered(evt);
@@ -219,11 +214,11 @@ public class SportsPanel extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(92, 92, 92)
-                .addComponent(tennisB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tennisB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(badmintonB, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(136, 136, 136)
-                .addComponent(tableTB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tableTB)
                 .addGap(78, 78, 78))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
@@ -249,11 +244,11 @@ public class SportsPanel extends javax.swing.JFrame {
                         .addGap(78, 78, 78)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(tableTB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tableTB)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(footB, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(tennisB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tennisB)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(basketB, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(67, 67, 67)

@@ -155,7 +155,7 @@ public class MenuPanel extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(252, 48, 29));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setText("Menu Panel");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

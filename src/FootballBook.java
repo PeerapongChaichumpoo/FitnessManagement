@@ -89,6 +89,7 @@ public class FootballBook extends javax.swing.JFrame {
         bt3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         bt4 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane5 = new javax.swing.JTabbedPane();
@@ -152,6 +153,7 @@ public class FootballBook extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(200, 768));
 
         bt2.setText("Court 2");
+        bt2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         bt2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt2ActionPerformed(evt);
@@ -159,6 +161,7 @@ public class FootballBook extends javax.swing.JFrame {
         });
 
         bt1.setText("Court 4");
+        bt1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         bt1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt1ActionPerformed(evt);
@@ -166,6 +169,7 @@ public class FootballBook extends javax.swing.JFrame {
         });
 
         bt3.setText("Court 1");
+        bt3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         bt3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt3ActionPerformed(evt);
@@ -173,6 +177,7 @@ public class FootballBook extends javax.swing.JFrame {
         });
 
         jButton1.setText("Back");
+        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -180,11 +185,14 @@ public class FootballBook extends javax.swing.JFrame {
         });
 
         bt4.setText("Court 3");
+        bt4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         bt4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt4ActionPerformed(evt);
             }
         });
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/football.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -199,19 +207,25 @@ public class FootballBook extends javax.swing.JFrame {
                     .addComponent(bt1, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
                     .addComponent(bt4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(173, 173, 173)
+                .addGap(23, 23, 23)
+                .addComponent(jLabel3)
+                .addGap(79, 79, 79)
                 .addComponent(bt3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
+                .addGap(61, 61, 61)
                 .addComponent(bt2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(56, 56, 56)
+                .addGap(52, 52, 52)
                 .addComponent(bt4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(60, 60, 60)
                 .addComponent(bt1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 250, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
@@ -221,7 +235,7 @@ public class FootballBook extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(252, 48, 29));
 
         jLabel1.setText("Football");
-        jLabel1.setFont(new java.awt.Font("Lucida Console", 1, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -230,14 +244,14 @@ public class FootballBook extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(188, 188, 188)
                 .addComponent(jLabel1)
-                .addContainerGap(400, Short.MAX_VALUE))
+                .addContainerGap(454, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addComponent(jLabel1)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 830, 170));
@@ -249,6 +263,7 @@ public class FootballBook extends javax.swing.JFrame {
         });
 
         addBt3.setText("Add");
+        addBt3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         addBt3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBt3ActionPerformed(evt);
@@ -258,12 +273,16 @@ public class FootballBook extends javax.swing.JFrame {
         court4time.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "15:30-16:00", "16:00-16:30", "16:30-17:00", "17:00:17:30", "17:30:18:00", "18:00-18:30", "18:30-19:00", "19:00-19:30", "19:30-20:00" }));
 
         jLabel15.setText("Pick the date");
+        jLabel15.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         jLabel16.setText("Id");
+        jLabel16.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         jLabel17.setText("Time");
+        jLabel17.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         jButton5.setText("Delete");
+        jButton5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -285,7 +304,7 @@ public class FootballBook extends javax.swing.JFrame {
         jScrollPane4.setViewportView(court4table);
 
         jLabel18.setText("Court 4 ");
-        jLabel18.setFont(new java.awt.Font("Lucida Console", 1, 36)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
 
         javax.swing.GroupLayout Court4PaneLayout = new javax.swing.GroupLayout(Court4Pane);
         Court4Pane.setLayout(Court4PaneLayout);
@@ -297,14 +316,13 @@ public class FootballBook extends javax.swing.JFrame {
                     .addGroup(Court4PaneLayout.createSequentialGroup()
                         .addGroup(Court4PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(Court4PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(court4date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(court4date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(Court4PaneLayout.createSequentialGroup()
                                 .addComponent(addBt3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(court4time, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(court4time, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(89, 89, 89))
@@ -341,7 +359,7 @@ public class FootballBook extends javax.swing.JFrame {
                             .addComponent(addBt3)
                             .addComponent(jButton5)))
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("tab2", Court4Pane);
@@ -353,6 +371,7 @@ public class FootballBook extends javax.swing.JFrame {
         });
 
         addBt4.setText("Add");
+        addBt4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         addBt4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBt4ActionPerformed(evt);
@@ -362,12 +381,16 @@ public class FootballBook extends javax.swing.JFrame {
         court2time.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "15:30-16:00", "16:00-16:30", "16:30-17:00", "17:00:17:30", "17:30:18:00", "18:00-18:30", "18:30-19:00", "19:00-19:30", "19:30-20:00" }));
 
         jLabel19.setText("Pick the date");
+        jLabel19.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         jLabel20.setText("Id");
+        jLabel20.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         jLabel21.setText("Time");
+        jLabel21.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         jButton6.setText("Delete");
+        jButton6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -389,7 +412,7 @@ public class FootballBook extends javax.swing.JFrame {
         jScrollPane5.setViewportView(court2table);
 
         jLabel22.setText("Court 2 ");
-        jLabel22.setFont(new java.awt.Font("Lucida Console", 1, 36)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
 
         javax.swing.GroupLayout Court2PaneLayout = new javax.swing.GroupLayout(Court2Pane);
         Court2Pane.setLayout(Court2PaneLayout);
@@ -401,14 +424,13 @@ public class FootballBook extends javax.swing.JFrame {
                     .addGroup(Court2PaneLayout.createSequentialGroup()
                         .addGroup(Court2PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(Court2PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(court2date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(court2date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(Court2PaneLayout.createSequentialGroup()
                                 .addComponent(addBt4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(court2time, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(court2time, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel19))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(89, 89, 89))
@@ -445,7 +467,7 @@ public class FootballBook extends javax.swing.JFrame {
                             .addComponent(addBt4)
                             .addComponent(jButton6)))
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("tab3", Court2Pane);
@@ -457,6 +479,7 @@ public class FootballBook extends javax.swing.JFrame {
         });
 
         addBt.setText("Add");
+        addBt.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         addBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBtActionPerformed(evt);
@@ -466,12 +489,16 @@ public class FootballBook extends javax.swing.JFrame {
         timebox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "15:30-16:00", "16:00-16:30", "16:30-17:00", "17:00:17:30", "17:30:18:00", "18:00-18:30", "18:30-19:00", "19:00-19:30", "19:30-20:00" }));
 
         jLabel2.setText("Pick the date");
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         jLabel5.setText("Id");
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         jLabel6.setText("Time");
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         jButton2.setText("Delete");
+        jButton2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -493,7 +520,7 @@ public class FootballBook extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jLabel10.setText("Court 1 ");
-        jLabel10.setFont(new java.awt.Font("Lucida Console", 1, 36)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
 
         javax.swing.GroupLayout Court1PaneLayout = new javax.swing.GroupLayout(Court1Pane);
         Court1Pane.setLayout(Court1PaneLayout);
@@ -505,14 +532,13 @@ public class FootballBook extends javax.swing.JFrame {
                     .addGroup(Court1PaneLayout.createSequentialGroup()
                         .addGroup(Court1PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(Court1PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(datePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(datePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(Court1PaneLayout.createSequentialGroup()
                                 .addComponent(addBt)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(timebox, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(timebox, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(89, 89, 89))
@@ -549,7 +575,7 @@ public class FootballBook extends javax.swing.JFrame {
                             .addComponent(addBt)
                             .addComponent(jButton2)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("tab1", Court1Pane);
@@ -561,6 +587,7 @@ public class FootballBook extends javax.swing.JFrame {
         });
 
         addBt2.setText("Add");
+        addBt2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         addBt2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addBt2ActionPerformed(evt);
@@ -570,12 +597,16 @@ public class FootballBook extends javax.swing.JFrame {
         court3time.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "15:30-16:00", "16:00-16:30", "16:30-17:00", "17:00:17:30", "17:30:18:00", "18:00-18:30", "18:30-19:00", "19:00-19:30", "19:30-20:00" }));
 
         jLabel11.setText("Pick the date");
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         jLabel12.setText("Id");
+        jLabel12.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         jLabel13.setText("Time");
+        jLabel13.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         jButton4.setText("Delete");
+        jButton4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -597,7 +628,7 @@ public class FootballBook extends javax.swing.JFrame {
         jScrollPane3.setViewportView(court3table);
 
         jLabel14.setText("Court 3 ");
-        jLabel14.setFont(new java.awt.Font("Lucida Console", 1, 36)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
 
         javax.swing.GroupLayout Court3PaneLayout = new javax.swing.GroupLayout(Court3Pane);
         Court3Pane.setLayout(Court3PaneLayout);
@@ -609,14 +640,13 @@ public class FootballBook extends javax.swing.JFrame {
                     .addGroup(Court3PaneLayout.createSequentialGroup()
                         .addGroup(Court3PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(Court3PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(court3date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(court3date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(Court3PaneLayout.createSequentialGroup()
                                 .addComponent(addBt2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(court3time, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(court3time, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(89, 89, 89))
@@ -653,7 +683,7 @@ public class FootballBook extends javax.swing.JFrame {
                             .addComponent(addBt2)
                             .addComponent(jButton4)))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("tab4", Court3Pane);
@@ -727,7 +757,7 @@ public class FootballBook extends javax.swing.JFrame {
         try{
 
             DBConnect db = new DBConnect();
-            String sql = String.format("SELECT Time FROM schedule WHERE date = '%s'",date);
+            String sql = String.format("SELECT Time FROM schedule WHERE date = '%s' AND sport = '%s' AND court = '%s'",date,sport,court);
             ResultSet rs = db.getConnect(sql);
             
             while(rs.next()){
@@ -831,7 +861,7 @@ public class FootballBook extends javax.swing.JFrame {
         try{
 
             DBConnect db = new DBConnect();
-            String sql = String.format("SELECT Time FROM schedule WHERE date = '%s'",date);
+            String sql = String.format("SELECT Time FROM schedule WHERE date = '%s' AND sport = '%s' AND court = '%s'",date,sport,court);
             ResultSet rs = db.getConnect(sql);
             
             while(rs.next()){
@@ -927,7 +957,7 @@ public class FootballBook extends javax.swing.JFrame {
         try{
 
             DBConnect db = new DBConnect();
-            String sql = String.format("SELECT Time FROM schedule WHERE date = '%s'",date);
+            String sql = String.format("SELECT Time FROM schedule WHERE date = '%s' AND sport = '%s' AND court = '%s'",date,sport,court);
             ResultSet rs = db.getConnect(sql);
             
             while(rs.next()){
@@ -1023,7 +1053,7 @@ public class FootballBook extends javax.swing.JFrame {
         try{
 
             DBConnect db = new DBConnect();
-            String sql = String.format("SELECT Time FROM schedule WHERE date = '%s'",date);
+            String sql = String.format("SELECT Time FROM schedule WHERE date = '%s' AND sport = '%s' AND court = '%s'",date,sport,court);
             ResultSet rs = db.getConnect(sql);
             
             while(rs.next()){
@@ -1166,6 +1196,7 @@ public class FootballBook extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;

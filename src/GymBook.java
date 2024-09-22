@@ -53,7 +53,7 @@ public class GymBook extends javax.swing.JFrame {
     }
     
     public void setTable(String sql){
-        String[] colname = {"Id","Name","Surname","Phone no.","Time in","Time out","Record"};
+        String[] colname = {"Id","Name","Surname","Phone no.","Time in","Time out"};
         DefaultTableModel model = new DefaultTableModel(colname,0);
         
         try{
@@ -68,8 +68,7 @@ public class GymBook extends javax.swing.JFrame {
                 String Phone = rs.getString("Phone");
                 String time_in = rs.getString("time_in");
                 String time_out = rs.getString("time_out");
-                String record = Integer.toString(rs.getInt("record"));
-                String[] row = {Id,name,surname,Phone,time_in,time_out,record};
+                String[] row = {Id,name,surname,Phone,time_in,time_out};
                
                 model.addRow(row);
                 
@@ -79,7 +78,9 @@ public class GymBook extends javax.swing.JFrame {
             e.printStackTrace();
         }
         jTable1.setModel(model);
+        jTable1.repaint();
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -98,6 +99,7 @@ public class GymBook extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         refresh = new javax.swing.JToggleButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("AU FITNESS");
@@ -109,10 +111,11 @@ public class GymBook extends javax.swing.JFrame {
         jPanel1.setMaximumSize(new java.awt.Dimension(200, 768));
         jPanel1.setMinimumSize(new java.awt.Dimension(200, 768));
 
-        jLabel1.setFont(new java.awt.Font("Lucida Console", 1, 48)); // NOI18N
         jLabel1.setText("Gym");
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
 
         bt1.setText("Time in");
+        bt1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         bt1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt1ActionPerformed(evt);
@@ -120,6 +123,7 @@ public class GymBook extends javax.swing.JFrame {
         });
 
         bt2.setText("Time out");
+        bt2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         bt2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt2ActionPerformed(evt);
@@ -127,6 +131,7 @@ public class GymBook extends javax.swing.JFrame {
         });
 
         jButton1.setText("Back");
+        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -147,9 +152,18 @@ public class GymBook extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         refresh.setText("refresh");
+        refresh.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         refresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("remove");
+        jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -157,25 +171,32 @@ public class GymBook extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jButton1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 152, Short.MAX_VALUE)
-                .addComponent(refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(searchf, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(426, 426, 426)
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(123, Short.MAX_VALUE)
+                .addComponent(refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(searchf, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(bt1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(bt2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66)
-                .addComponent(jButton1)
-                .addGap(57, 57, 57))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(426, 426, 426)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addGap(18, 18, 18)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,14 +205,16 @@ public class GymBook extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(12, 12, 12)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bt1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bt2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(searchf, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(refresh))
+                    .addComponent(refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1030, 768));
@@ -209,7 +232,7 @@ public class GymBook extends javax.swing.JFrame {
         try{
 
             DBConnect db = new DBConnect();
-            String sql = String.format("SELECT time_in FROM gymbook WHERE id='%s'",id);
+            String sql = String.format("SELECT time_in FROM gymbook WHERE id='%s' ORDER BY time_in DESC",id);
             ResultSet rs = db.getConnect(sql);
             
             if(rs.next()){
@@ -226,7 +249,7 @@ public class GymBook extends javax.swing.JFrame {
         
         try{
             DBConnect db = new DBConnect();
-            String sql = String.format("UPDATE gymbook SET time_out = '%s' WHERE id = '%s' AND time_in = '%s' ",time_out,id,time_in);
+            String sql = String.format("UPDATE gymbook SET time_out = '%s' WHERE id = '%s' AND time_in = '%s'",time_out,id,time_in);
             db.getUpdate(sql);
             db.disconnect();
             
@@ -266,28 +289,55 @@ public class GymBook extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         
-        Long now = System.currentTimeMillis();
-        Time time = new Time(now);
-        time_in = time.toString();
-        
-        int record = getRecord(id);
-        
-       
+        String time_out = "";
         
         try{
-            DBConnect db =new DBConnect();
-            String sql = String.format("INSERT INTO gymbook(Id,Name,Surname,Phone,time_in,record) VALUES('%s','%s','%s','%s','%s','%d') ",id,name,surname,phone,time_in,record);
-            db.getUpdate(sql);
+
+            DBConnect db = new DBConnect();
+            String sql = String.format("SELECT time_out FROM gymbook WHERE id = '%s' ORDER BY time_in DESC",id);
+            ResultSet rs = db.getConnect(sql);
+            
+            if(rs.next()){
+                time_out = rs.getString("time_out");
+                
+                
+            }
             
             
-            db.disconnect();
-            
-            JOptionPane.showMessageDialog(null,"Time in!");
         }catch(Exception ex){
-            
+            ex.printStackTrace();
         }
-        String sql = "SELECT Id,Name,Surname,Phone,time_in,time_out,record FROM gymbook";
-        setTable(sql);
+        
+        if(time_out == null){
+           JOptionPane.showMessageDialog(null,"Not Time out yet!","Error",JOptionPane.WARNING_MESSAGE);
+        }
+        else{
+            Long now = System.currentTimeMillis();
+            Time time = new Time(now);
+            time_in = time.toString();
+
+            int record = getRecord(id);
+
+
+
+            try{
+                DBConnect db =new DBConnect();
+                String sql = String.format("INSERT INTO gymbook(Id,Name,Surname,Phone,time_in,record) VALUES('%s','%s','%s','%s','%s','%d') ",id,name,surname,phone,time_in,record);
+                db.getUpdate(sql);
+
+
+                db.disconnect();
+
+                JOptionPane.showMessageDialog(null,"Time in!");
+            }catch(Exception ex){
+
+            }
+            String sql = "SELECT Id,Name,Surname,Phone,time_in,time_out,record FROM gymbook";
+            setTable(sql);
+        }
+        
+        
+       
         
         
         
@@ -308,7 +358,26 @@ public class GymBook extends javax.swing.JFrame {
         // TODO add your handling code here:
         String sql = "SELECT Id,Name,Surname,Phone,time_in,time_out,record FROM gymbook";
         setTable(sql);
+        
     }//GEN-LAST:event_refreshActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        String id = searchf.getText();
+        int a = JOptionPane.showConfirmDialog(null,"Do you really want to delete this Id '?", "Select",JOptionPane.YES_NO_OPTION);
+            if(a == 0){
+                try{
+                    DBConnect db =new DBConnect();
+                    String sql = String.format("DELETE FROM gymbook WHERE id='%s' ",id);
+                    db.getUpdate(sql);
+                    db.disconnect();
+
+                    JOptionPane.showMessageDialog(null,"Delete Successfully!");
+                }catch(Exception ex){
+                    ex.printStackTrace();
+                }
+            }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -352,6 +421,7 @@ public class GymBook extends javax.swing.JFrame {
     private javax.swing.JButton bt1;
     private javax.swing.JButton bt2;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

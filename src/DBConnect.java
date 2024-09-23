@@ -13,14 +13,11 @@ public class DBConnect {
     public Statement stm;
     
     public ResultSet rs;
-    
-    //private String url = "jdbc:mysql://sql12.freesqldatabase.com:3306/sql12730413";
-    
+
     private String url = "jdbc:postgresql://ep-mute-morning-a1fsu754.ap-southeast-1.aws.neon.tech/neondb";
     
-    //private String username = "sql12730413";
     private String username = "neondb_owner";
-    //private String password = "cABu1ArxjQ";
+    
     private String password = "BxAM7JKzF0ew";
     public DBConnect(){
         try{

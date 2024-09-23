@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import javax.swing.JTable;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -59,6 +60,35 @@ public class ScheduleFrame extends javax.swing.JFrame {
             e.printStackTrace();
         }
         jTable1.setModel(model);
+    }
+    public void setTable(String sql,JTable table){
+        String[] colname = {"Id","Name","Phone no.","Sports","Court","Date","Time"};
+        DefaultTableModel model = new DefaultTableModel(colname,0);
+        
+        try{
+            DBConnect db = new DBConnect();
+            ResultSet rs = db.getConnect(sql);
+            
+        
+            while(rs.next()){
+                String Id = rs.getString("Id");
+                String name = rs.getString("Name");
+                String Phone = rs.getString("Phone");
+                String sport = rs.getString("Sport");
+                String court = rs.getString("Court");
+                String date = rs.getString("Date");
+                String time = rs.getString("Time");
+                
+                String[] row = {Id,name,Phone,sport,court,date,time};
+               
+                model.addRow(row);
+                
+            }
+            
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        table.setModel(model);
     }
 
     /**
@@ -246,8 +276,9 @@ public class ScheduleFrame extends javax.swing.JFrame {
                     ex.printStackTrace();
                 }
             }
+            
             String sql = "SELECT id,Name,Phone,Sport,Court,Date,Time FROM schedule";
-            setTable(sql);
+            setTable(sql,jTable1);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

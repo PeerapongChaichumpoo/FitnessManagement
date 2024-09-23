@@ -13,6 +13,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.WindowEvent;
 import javax.swing.JOptionPane;
 
+
 public class WelcomeFrame extends javax.swing.JFrame {
 
     /**
@@ -170,7 +171,7 @@ public class WelcomeFrame extends javax.swing.JFrame {
         if(userName.isEmpty() || passWord.isEmpty()){
             JOptionPane.showMessageDialog(null,"Please enter both Username and Password!","Error",JOptionPane.WARNING_MESSAGE);
         }
-        else if(userName.equals("admin") && passWord.equals("1234")){
+        else if(userName.equals(Admin.getUsername()) && passWord.equals(Admin.getPassword())){
             close();
             MenuPanel mp = new MenuPanel();
             mp.setVisible(true);

@@ -38,7 +38,7 @@ public class NewMember extends javax.swing.JFrame {
 
 
             DBConnect db = new DBConnect();
-            String sql = String.format("SELECT COUNT(number) FROM users");
+            String sql = String.format("SELECT MAX(number) FROM users");
             ResultSet rs = db.getConnect(sql);
             
             if(rs.next()){

@@ -315,74 +315,74 @@ public class SportsPanel extends javax.swing.JFrame {
 
     private void tennisBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tennisBMouseEntered
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\tnhv.png");
-        tennisB.setIcon(icon);
+        
+        tennisB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tnhv.png")));
     }//GEN-LAST:event_tennisBMouseEntered
 
     private void tennisBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tennisBMouseExited
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\tn.png");
-        tennisB.setIcon(icon);
+        
+        tennisB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tn.png")));
     }//GEN-LAST:event_tennisBMouseExited
 
     private void badmintonBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_badmintonBMouseEntered
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\bmdhv.png");
-        badmintonB.setIcon(icon);
+        
+        badmintonB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bmdhv.png")));
     }//GEN-LAST:event_badmintonBMouseEntered
 
     private void badmintonBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_badmintonBMouseExited
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\bmd.png");
-        badmintonB.setIcon(icon);
+        
+        badmintonB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bmd.png")));
     }//GEN-LAST:event_badmintonBMouseExited
 
     private void tableTBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableTBMouseEntered
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\tbthv.png");
-        tableTB.setIcon(icon);
+        
+        tableTB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tbthv.png")));
     }//GEN-LAST:event_tableTBMouseEntered
 
     private void tableTBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableTBMouseExited
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\tbt.png");
-        tableTB.setIcon(icon);
+        
+        tableTB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tbt.png")));
     }//GEN-LAST:event_tableTBMouseExited
 
     private void basketBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_basketBMouseEntered
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\bkbhv.png");
-        basketB.setIcon(icon);
+        
+        basketB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bkbhv.png")));
     }//GEN-LAST:event_basketBMouseEntered
 
     private void basketBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_basketBMouseExited
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\bkb.png");
-        basketB.setIcon(icon);
+        
+        basketB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bkb.png")));
     }//GEN-LAST:event_basketBMouseExited
 
     private void footBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_footBMouseEntered
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\fbhv.png");
-        footB.setIcon(icon);
+        
+        footB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fbhv.png")));
     }//GEN-LAST:event_footBMouseEntered
 
     private void footBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_footBMouseExited
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\fb.png");
-        footB.setIcon(icon);
+        
+        footB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fb.png")));
     }//GEN-LAST:event_footBMouseExited
 
     private void gymBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gymBMouseEntered
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\gymhv.png");
-        gymB.setIcon(icon);
+        
+        gymB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gymhv.png")));
     }//GEN-LAST:event_gymBMouseEntered
 
     private void gymBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gymBMouseExited
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\gym.png");
-        gymB.setIcon(icon);
+        
+        gymB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gym.png")));
     }//GEN-LAST:event_gymBMouseExited
 
     /**

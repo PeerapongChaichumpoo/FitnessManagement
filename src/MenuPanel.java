@@ -309,63 +309,63 @@ public class MenuPanel extends javax.swing.JFrame {
 
     private void jButton4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseEntered
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\schedulehv.png");
-        jButton4.setIcon(icon);
+        
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/schedulehv.png")));
     }//GEN-LAST:event_jButton4MouseEntered
 
     private void jButton4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseExited
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\schedule.png") ;
-        jButton4.setIcon(icon);
+        
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/schedule.png")));
     }//GEN-LAST:event_jButton4MouseExited
 
     private void jButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseEntered
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\editmemhv.png");
-        jButton3.setIcon(icon);
+        
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editmemhv.png")));
     }//GEN-LAST:event_jButton3MouseEntered
 
     private void jButton3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseExited
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\editmem.png");
-        jButton3.setIcon(icon);
+        
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editmem.png")));
     }//GEN-LAST:event_jButton3MouseExited
 
     private void jButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseEntered
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\bookinghv.png");
-        jButton5.setIcon(icon);
+        
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bookinghv.png")));
         
     }//GEN-LAST:event_jButton5MouseEntered
 
     private void jButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseExited
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\booking.png");
-        jButton5.setIcon(icon);
+        
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/booking.png")));
     }//GEN-LAST:event_jButton5MouseExited
 
     private void jButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseEntered
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\memberlist.png");
-        jButton2.setIcon(icon);
+        
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/memberlist.png")));
     }//GEN-LAST:event_jButton2MouseEntered
 
     private void jButton2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseExited
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\memberlisthv.png");
-        jButton2.setIcon(icon);
+        
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/memberlisthv.png")));
     }//GEN-LAST:event_jButton2MouseExited
 
     private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\nmbhover.png");
-        jButton1.setIcon(icon);
+        
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nmbhover.png")));
     }//GEN-LAST:event_jButton1MouseEntered
 
     private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
         // TODO add your handling code here:
-        ImageIcon icon = new  ImageIcon("src\\images\\new member.png");
-        jButton1.setIcon(icon);
+        
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/new member.png")));
     }//GEN-LAST:event_jButton1MouseExited
 
     /**

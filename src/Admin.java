@@ -18,4 +18,14 @@ public  class Admin {
     public static String getPassword(){
         return password;
     }
+
+    public static void setUsername(String username) {
+        Admin.username = username;
+    }
+
+    public static void setPassword(String password) {
+        Admin.password = password;
+    }
+    
+    
 }

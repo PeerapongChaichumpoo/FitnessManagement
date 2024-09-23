@@ -37,10 +37,6 @@ public class BasketballBook extends javax.swing.JFrame {
         String sql4 = String.format("SELECT id,Name,Phone,Date,Time FROM schedule WHERE sport='%s' AND court = '%s'","Basketball","4");
         setTable(sql4,court4table);
     }
-    public void close(){
-        WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
-        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
-    }
     public void setTable(String sql,JTable table){
         String[] colname = {"Id","Name","Phone no.","Date","Time"};
         DefaultTableModel model = new DefaultTableModel(colname,0);
@@ -712,7 +708,7 @@ public class BasketballBook extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        close();
+        Close.close(this);
         SportsPanel sp = new SportsPanel();
         sp.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed

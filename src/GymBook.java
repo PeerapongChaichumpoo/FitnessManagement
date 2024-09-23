@@ -28,10 +28,6 @@ public class GymBook extends javax.swing.JFrame {
         String sql = "SELECT Id,Name,Surname,Phone,time_in,time_out,record FROM gymbook";
         setTable(sql);
     }
-    public void close(){
-        WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
-        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
-    }
     
     public int getRecord(String id){
         int record =0;
@@ -368,7 +364,7 @@ public class GymBook extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        close();
+        Close.close(this);
         SportsPanel sp = new SportsPanel();
         sp.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed

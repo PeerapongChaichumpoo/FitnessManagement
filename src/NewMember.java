@@ -27,10 +27,7 @@ public class NewMember extends javax.swing.JFrame {
     public NewMember() {
         initComponents();
     }
-    public void close(){
-        WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
-        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
-    }
+    
     public int getMaxNo(){
         int no =0;
         try{
@@ -366,7 +363,7 @@ public class NewMember extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        close();
+        Close.close(this);
         MenuPanel mp = new MenuPanel();
         mp.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed

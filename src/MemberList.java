@@ -27,11 +27,7 @@ public class MemberList extends javax.swing.JFrame {
         setTable(sql);
         
     }
-    public void close(){
-        WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
-        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
-    }
-    
+
     public void setTable(String sql){
         String[] colname = {"Id","Name","Surname","Age","Gender","Title","Phone no."};
         DefaultTableModel model = new DefaultTableModel(colname,0);
@@ -192,7 +188,7 @@ public class MemberList extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        close();
+        Close.close(this);
         MenuPanel mp = new MenuPanel();
         mp.setVisible(true);
                 

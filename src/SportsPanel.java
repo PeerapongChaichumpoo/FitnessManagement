@@ -21,10 +21,7 @@ public class SportsPanel extends javax.swing.JFrame {
     public SportsPanel() {
         initComponents();
     }
-    public void close(){
-        WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
-        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -262,7 +259,7 @@ public class SportsPanel extends javax.swing.JFrame {
 
     private void tennisBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tennisBActionPerformed
         // TODO add your handling code here:
-        close();
+        Close.close(this);
         TennisBook tb = new TennisBook();
         tb.setVisible(true);
             
@@ -270,7 +267,7 @@ public class SportsPanel extends javax.swing.JFrame {
 
     private void badmintonBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_badmintonBActionPerformed
         // TODO add your handling code here:
-        close();
+        Close.close(this);
         BadmintonBook bb = new BadmintonBook();
         bb.setVisible(true);
        
@@ -278,21 +275,21 @@ public class SportsPanel extends javax.swing.JFrame {
 
     private void basketBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_basketBActionPerformed
         // TODO add your handling code here:
-        close();
+        Close.close(this);
         BasketballBook bkb = new BasketballBook();
         bkb.setVisible(true);
     }//GEN-LAST:event_basketBActionPerformed
 
     private void footBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_footBActionPerformed
         // TODO add your handling code here:
-        close();
+        Close.close(this);
         FootballBook fb = new FootballBook();
         fb.setVisible(true);
     }//GEN-LAST:event_footBActionPerformed
 
     private void tableTBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tableTBActionPerformed
         // TODO add your handling code here:
-        close();
+        Close.close(this);
         TableTennisBook tbb = new TableTennisBook();
         tbb.setVisible(true);
         
@@ -302,7 +299,7 @@ public class SportsPanel extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
       
-            close();
+            Close.close(this);
             MenuPanel mp = new MenuPanel();
             mp.setVisible(true);
         
@@ -310,7 +307,7 @@ public class SportsPanel extends javax.swing.JFrame {
 
     private void gymBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gymBActionPerformed
         // TODO add your handling code here:
-        close();
+        Close.close(this);
         GymBook gb = new GymBook();
         gb.setVisible(true);
                 

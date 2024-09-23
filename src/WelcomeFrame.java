@@ -22,10 +22,7 @@ public class WelcomeFrame extends javax.swing.JFrame {
     public WelcomeFrame() {
         initComponents();
     }
-    public void close(){
-        WindowEvent closeWindow = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
-        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindow);
-    }
+    
     
     
 
@@ -172,7 +169,7 @@ public class WelcomeFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Please enter both Username and Password!","Error",JOptionPane.WARNING_MESSAGE);
         }
         else if(userName.equals(Admin.getUsername()) && passWord.equals(Admin.getPassword())){
-            close();
+            Close.close(this);
             MenuPanel mp = new MenuPanel();
             mp.setVisible(true);
         }

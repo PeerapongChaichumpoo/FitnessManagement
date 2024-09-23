@@ -58,10 +58,10 @@ public class MenuPanel extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(194, 202, 215));
 
-        jButton1.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/new member.png"))); // NOI18N
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton1.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
         jButton1.setMaximumSize(new java.awt.Dimension(800, 600));
         jButton1.setMinimumSize(new java.awt.Dimension(800, 600));
         jButton1.setPreferredSize(new java.awt.Dimension(256, 256));
@@ -99,9 +99,9 @@ public class MenuPanel extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/editmem.png"))); // NOI18N
         jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton3.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
         jButton3.setPreferredSize(new java.awt.Dimension(256, 256));
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -117,9 +117,9 @@ public class MenuPanel extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/schedule.png"))); // NOI18N
         jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton4.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
         jButton4.setPreferredSize(new java.awt.Dimension(256, 256));
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -135,9 +135,9 @@ public class MenuPanel extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/booking.png"))); // NOI18N
         jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton5.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
         jButton5.setPreferredSize(new java.awt.Dimension(256, 256));
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -155,8 +155,8 @@ public class MenuPanel extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(252, 48, 29));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setText("Menu Panel");
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -177,8 +177,9 @@ public class MenuPanel extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(252, 48, 29));
 
-        jButton6.setFont(new java.awt.Font("Lucida Console", 1, 12)); // NOI18N
         jButton6.setText("Log out");
+        jButton6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton6.setFont(new java.awt.Font("Lucida Console", 1, 12)); // NOI18N
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);

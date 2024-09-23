@@ -49,7 +49,6 @@ public class WelcomeFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("AU FITNESS");
-        setMaximumSize(new java.awt.Dimension(800, 600));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -58,8 +57,8 @@ public class WelcomeFrame extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
         jLabel2.setText("AU Fitness");
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -87,16 +86,18 @@ public class WelcomeFrame extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(245, 245, 245));
         jPanel2.setPreferredSize(new java.awt.Dimension(400, 600));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel3.setText("Username");
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel4.setText("Password");
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
 
         tf1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
-        signB.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         signB.setText("Sign in");
+        signB.setBackground(new java.awt.Color(245, 245, 245));
+        signB.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        signB.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         signB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 signBActionPerformed(evt);

@@ -85,7 +85,6 @@ public class NewMember extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("AU FITNESS");
-        setMaximumSize(new java.awt.Dimension(800, 600));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -95,8 +94,8 @@ public class NewMember extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(252, 48, 29));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
         jLabel1.setText("Add New Member");
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -124,17 +123,17 @@ public class NewMember extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setText("Name");
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setText("Surname");
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setText("Phone no.");
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setText("Age");
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         agebox.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         agebox.addActionListener(new java.awt.event.ActionListener() {
@@ -143,19 +142,19 @@ public class NewMember extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel6.setText("Gender");
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
-        titleBox.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         titleBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Student", "Teacher", "Guest" }));
+        titleBox.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         titleBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 titleBoxActionPerformed(evt);
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel8.setText("Title");
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         phonebox.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         phonebox.addActionListener(new java.awt.event.ActionListener() {
@@ -164,24 +163,26 @@ public class NewMember extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton1.setText("Add");
+        jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton2.setText("Back");
+        jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        genderbox.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         genderbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Not specified" }));
+        genderbox.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
